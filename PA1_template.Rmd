@@ -46,10 +46,16 @@ summary(steps.per.day)
 ```
 ##### 2. Make a histogram of the total number of steps taken each day
 ```{r}
+library(ggplot2)
+par("mar"=c(5.1, 4.5, 4.1, 2.1))
+png(filename = "plot1.png", 
+    width = 480, height = 480, 
+    units = "px", bg = "transparent")
 ggplot(steps.per.day, aes(x = steps)) + 
        geom_histogram(fill = "blue", binwidth = 800) + 
         labs(title="Histogram of the Total Steps Taken Each Day", 
              x = "Number of Steps / Day", y = "Number of times / day(Count)") + theme_bw() 
+dev.off()
 ```
 
 ##### 3. Calculate and report the mean and median of the total number of steps taken per day
@@ -73,10 +79,16 @@ colnames(steps.per.interval) <- c("interval", "steps")
 
 ##### 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 ```{r}
+library(ggplot2)
+par("mar"=c(5.1, 4.5, 4.1, 2.1))
+png(filename = "plot2.png", 
+    width = 480, height = 480, 
+    units = "px", bg = "transparent")
 ggplot(steps.per.interval, aes(x=interval, y=steps)) +   
         geom_line(color="red", size=1) +  
         labs(title="Time Series: Average Daily Activity Pattern [ Steps per Interval]", x="Interval[Minutes]", y="Average Number of steps") +  
-        theme_bw() 
+        theme_bw()
+dev.off()
 ```
 
 ##### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -130,10 +142,16 @@ colnames(steps.per.day.fill) <- c("date","steps")
 
 ##### 4. Make a histogram of the total number of steps taken each day 
 ```{r}
+library(ggplot2)
+par("mar"=c(5.1, 4.5, 4.1, 2.1))
+png(filename = "plot3.png", 
+    width = 480, height = 480, 
+    units = "px", bg = "transparent")
 ggplot(steps.per.day.fill, aes(x = steps)) + 
        geom_histogram(fill = "Purple", binwidth = 800) + 
         labs(title="Histogram of Total Steps / Day", 
              x = "Times / day(Count)", y = "Frequency") + theme_bw() 
+dev.off()
 ```
 
 ##### ... and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
@@ -186,11 +204,17 @@ data_weekdays <- data_by_weekdays(data_fill)
 ##### 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
 ```{r}
+library(ggplot2)
+par("mar"=c(5.1, 4.5, 4.1, 2.1))
+png(filename = "plot4.png", 
+    width = 480, height = 480, 
+    units = "px", bg = "transparent")
 ggplot(data_weekdays, aes(x=interval, y=steps)) + 
         geom_line(color="violet") + 
         facet_wrap(~ dayofweek, nrow=2, ncol=1) +
         labs(x="5-minute interval", y="Avarage Number of Steps") +
         theme_bw()
+dev.off()
 ```
 
 
