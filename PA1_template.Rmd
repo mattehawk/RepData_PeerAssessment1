@@ -1,6 +1,6 @@
 ---
 title: 'Reproducible Research: Peer Assessment 1'
-author: "Matthew Hawkins"
+author: "Matthew E Hawkins"
 date: "April 17, 2016"
 output: html_document
 ---
