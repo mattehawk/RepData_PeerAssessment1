@@ -4,7 +4,7 @@ author: "Matthew Hawkins"
 date: "April 17, 2016"
 output: html_document
 ---
-### Libraries
+### Libraries to be used
 ```{r}
 library(ggplot2)
 library(knitr)
